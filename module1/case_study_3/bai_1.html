@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [];
+    let b = [];
+    let doDai = +prompt("Nhập độ dài của mảng");
+    for (let i = 0; i < doDai; i++) {
+        let number = +prompt("Nhập số nguyên cho vào mảng a");
+        a.push(number);
+        for (let j = 0; j < doDai; j++) {
+            if (j == 0) {
+                b[j] = a[j];
+            } else {
+                b[j] = b[j - 1] + a[j];
+            }
+        }
+    }
+    alert("Mảng a là " + a);
+    alert("Mảng b là " + b);
+</script>
+</body>
+</html>

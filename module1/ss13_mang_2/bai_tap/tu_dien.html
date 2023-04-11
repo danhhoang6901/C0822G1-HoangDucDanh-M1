@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TỪ điển</title>
+</head>
+<body>
+<span>Nhập từ:</span>
+<input type="text" id="nhap" name="text">
+<button onclick="dich()">Dịch</button>
+<p id="ketQua"></p>
+<script>
+    function dich() {
+        let english = ["apple", "banana", "orange", "watermelon", "grape"];
+        let vietnamese = ["Táo", "Chuối", "Cam", "Dưa hấu", "Nho"];
+        let check = 0;
+        for (let i = 0; i < english.length; i++) {
+            if (document.getElementById("nhap").value === english[i]) {
+                document.getElementById("ketQua").innerHTML = "" + vietnamese[i];
+                check++;
+            }
+        }
+        if (!check) {
+            document.getElementById("ketQua").innerHTML = "Không tìm thấy";
+        }
+    }
+</script>
+</body>
+</html>

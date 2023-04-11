@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let viTri = 0;
+    let ketQua = [];
+    let max = 0;
+    for (let i = 0; i < 10; i++) {
+        let number = +prompt("Nhập 1 số");
+        ketQua.push(number);
+        if (max < ketQua[i]) {
+            max = ketQua[i];
+            viTri = i;
+        }
+    }
+    console.log(ketQua);
+    document.write("Phần tử có giá trị lớn nhất là " + max + " tại vị trí " + viTri);
+</script>
+</body>
+</html>

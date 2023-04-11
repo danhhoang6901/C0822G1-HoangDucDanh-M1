@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let ketQua = [];
+    let doDai = prompt("Nhập độ dài của mảng")
+    for (let i = 0; i < doDai; i++) {
+        let kyTu = prompt("Nhập 1 ký tự");
+        console.log(kyTu);
+        ketQua.push(kyTu);
+        if (ketQua[i] === '-') {
+            ketQua.splice(i, 1, '_');
+        }
+    }
+    document.write(ketQua);
+</script>
+</body>
+</html>

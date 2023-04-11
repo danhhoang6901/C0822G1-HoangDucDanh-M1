@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let tien = [20000, 10000, 10000, 30000, 35000, 35000];
+    let order;
+    let pay = 0;
+    let soLuong;
+    do {
+        order = prompt("1.Cafe\n" + "2.Nước lọc\n" + "3.Nước dừa\n" + "4.Cam vắt\n" + "5.Nước ép cà rốt\n" + "6.Nước ép cà chua\n" + "7.Thoát gọi món");
+        if (order > 7) {
+            break;
+        }
+        soLuong = +prompt("Nhập số lượng");
+        pay += soLuong * tien[order - 1];
+    } while (order < 7)
+    alert("Tổng số tiền bạn phải trả là " + pay + " VNĐ");
+</script>
+</body>
+</html>

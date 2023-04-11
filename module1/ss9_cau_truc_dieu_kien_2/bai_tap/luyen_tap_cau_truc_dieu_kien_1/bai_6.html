@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let sales = +prompt("Nhập doanh số bán hàng");
+    let money = sales * 0.1;
+    let money2 = sales * 0.2;
+    let money3 = sales * 0.3;
+    if (sales > 30000000) {
+        alert("Số hoa hồng bạn nhận được là: " + money3);
+    } else if (sales > 20000000) {
+        alert("Sô hoa hồng bạn nhận được là: " + money2);
+    } else {
+        alert("Số hoa hồng bạn nhận được là: " + money);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let fibonacci = prompt("Nhập n dãy số fibonacci");
+    let number1 = 0;
+    number2 = 1;
+    let tong;
+    for (let i = 1; i <= fibonacci; i++) {
+        number1 = number1 + 0;
+        tong = number1 + number2;
+        number1 = number2;
+        number2 = tong;
+        if (number1 % 5 == 0) {
+            document.write(number1 + "<br>");
+        } else {
+            continue;
+        }
+    }
+</script>
+</body>
+</html>

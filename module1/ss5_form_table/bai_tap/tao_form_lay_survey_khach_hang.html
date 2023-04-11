@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form lấy survey khách hàng </title>
+</head>
+<style>
+    .table{
+        table-layout: fixed;
+        width: 1200px;
+    }
+</style>
+<body>
+    <form action="https://gallery.wufoo.com/embed/pyej3161l9pt0d/def/embedKey=pyej3161l9pt0d89279" method="post">
+        <h4>Market Research Survey</h4>
+        <p>Please take a few moments to complete this satisfaction survey.</p>
+        <hr>
+        <span><b>What is your age range?</b></span><br>
+            <input type="number" name="age" placeholder="18-24" style="margin-bottom: 10px"><br>
+        <span><b>What is your yearly income range?</b></span><br>
+            <input type="number" name="money" placeholder="$0-$25,000" style="margin-bottom: 10px"><br>
+        <span><b>Gender</b></span><br>
+            <input type="radio" name="gender">Male<br>
+            <input type="radio" name="gender" style="margin-bottom: 10px">Female<br>
+        <span><b>Which of the following products have your purchased in the last 2 months. Please check all the apply.</b></span><br>
+            <input type="checkbox" name="product">Product 1<br>
+            <input type="checkbox" name="product">Product 2<br>
+            <input type="checkbox" name="product" style="margin-bottom: 10px">Product 3<br>
+        <span><b>How often would you use our new product?</b></span><br>
+            <input type="radio" name="daily">Daily<br>
+            <input type="radio" name="daily">Weekly<br>
+            <input type="radio" name="daily" style="margin-bottom: 10px">Monthly<br>
+        <span><b>What would you pay for the new product?</b></span><br>
+            $<input type="number" name="money">.<input type="number" name="money"><br>
+        <span>Dollars</span><span style="margin-left: 130px;margin-bottom: 10px">Cents</span><br>
+        <span><b>What features would you like to see in the new product.</b></span><br>
+            <textarea cols="50" rows="5"></textarea><br>
+        <span>Please rate your level of agreement with the following statements.</span><br>
+            <table class="table" border="0" >
+                <tr style="background-color:silver" align="center">
+                    <td></td>
+                    <td>Strongly Disagree</td>
+                    <td>Disagree</td>
+                    <td>Agree</td>
+                    <td>Strongly Agree</td>
+                </tr><br>
+                <tr>
+                    <th>Our products are priced fairl.</th>
+                    <th>
+                        <input type="radio" name="agree"><br>1</br>
+                    </th>
+                    <th>
+                        <input type="radio" name="agree"><br>2</br>
+                    </th>
+                    <th>
+                        <input type="radio" name="agree"><br>3</br>
+                    </th>
+                    <th>
+                        <input type="radio" name="agree"><br>4</br>
+                    </th>
+                </tr>
+                <tr>
+                    <th>Our products are high quality.</th>
+                    <th>
+                        <input type="radio" name="agree"><br>1</br>
+                    </th>
+                    <th>
+                        <input type="radio" name="agree"><br>2</br>
+                    </th>
+                    <th>
+                        <input type="radio" name="agree"><br>3</br>
+                    </th>
+                    <th>
+                        <input type="radio" name="agree"><br>4</br>
+                    </th>
+                </tr>
+                <tr>
+                    <th>You would recommend our product to a friend or coworker.</th>
+                    <th>
+                        <input type="radio" name="agree"><br>1</br>
+                    </th>
+                    <th>
+                        <input type="radio" name="agree"><br>2</br>
+                    </th>
+                    <th>
+                        <input type="radio" name="agree"><br>3</br>
+                    </th>
+                    <th>
+                        <input type="radio" name="agree"><br>4</br>
+                    </th>
+                </tr>
+            </table>
+    </form>
+</body>
+</html>

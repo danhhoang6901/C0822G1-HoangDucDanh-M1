@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ngôi sao</title>
+</head>
+<body>
+<span>Nhập tên ngôi sao:</span>
+<input type="text" id="nhap" name="text">
+<button onclick="timKiem()">Tìm kiếm</button>
+<p id="ketQua"></p>
+<script>
+    function timKiem() {
+        let ngoiSao = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let ngoiSao1 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", " Leo"];
+        let check = 0;
+        for (let i = 0; i < ngoiSao.length; i++) {
+            if (document.getElementById("nhap").value === ngoiSao[i]) {
+                document.getElementById("ketQua").innerHTML = "" + ngoiSao1[i];
+                check++;
+            }
+        }
+        if (!check) {
+            document.getElementById("ketQua").innerHTML = "Không tìm thấy";
+        }
+    }
+</script>
+</body>
+</html>

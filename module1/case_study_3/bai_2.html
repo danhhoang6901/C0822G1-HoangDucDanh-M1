@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [];
+    let b = [];
+    let c = [];
+    let doDai = +prompt("Nhập độ dài mảng a");
+    let doDai2 = +prompt("Nhập độ dài mảng b");
+    for (let i = 0; i < doDai; i++) {
+        let num = +prompt("Nhập 1 số nguyên cho vào mảng a");
+        a.push(num);
+    }
+    for (let j = 0; j < doDai2; j++) {
+        let num2 = +prompt("Nhập vào 1 số nguyên cho vào mảng b");
+        b.push(num2);
+        if (!a.includes(b[j])) {
+            c.push(b[j]);
+        }
+    }
+    alert(a);
+    alert(b);
+    alert(c);
+</script>
+</body>
+</html>

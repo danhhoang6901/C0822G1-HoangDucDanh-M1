@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let doDai = prompt("Nhập độ dài mảng");
+    while (doDai > 50 || doDai < 0) {
+        alert("Nhập lại");
+        
+        doDai = prompt("Nhập độ dài mảng");
+    }
+    let arr = [];
+    let tong = 0;
+    let arr1 = [];
+    for (let i = 0; i < doDai; i++) {
+        let number = +prompt("Nhập số cho vào mảng");
+        arr.push(number);
+        if (arr[i] % 5 == 0 && i % 3 == 0) {
+            tong += arr[i];
+            arr1.push(arr[i]);
+        }
+    }
+    document.write("Mảng ban đầu " + arr + "<br>");
+    document.write("Mảng thú 2 có phần tử chia hết cho 5 tại vị trí chia hết cho 3 :" + arr1 + "<br>");
+    document.write("Trung bình cộng của mảng thứ 2 là " + tong / arr1.length);
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function footToMeter(foot) {
+        meter = 0.305 * foot;
+        return meter;
+    }
+    function footToFoot(meter) {
+        foot = 3.279 * meter;
+        return foot;
+    }
+    let number1 = +prompt("Nhập feet");
+    let number2 = +prompt("Nhập meter");
+    let ketQua = footToMeter(number1);
+    let ketQua2 = footToFoot(number2)
+    document.write(ketQua + '<br>');
+    document.write(ketQua2);
+</script>
+</body>
+</html>

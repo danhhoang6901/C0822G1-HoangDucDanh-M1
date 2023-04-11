@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+    }
+
+    function formatString(rootString) {
+        let rootCharacterArray = rootString.split(" ");
+        let withoutSpaceArray = rootCharacterArray.filter(
+            function (item) {
+                return item !== "";
+            }
+        )
+        withoutSpaceArray = withoutSpaceArray.map(function (item) {
+            return capitalizeFirstLetter(item);
+        })
+        return withoutSpaceArray.join(" ");
+    }
+
+
+    function getMaxLengthWordFromString(formattedString) {
+        let formattedWords = formattedString.split(" ");
+        let maxLengthWord = "";
+        formattedWords.forEach(function (word) {
+            if (maxLengthWord.length < word.length) {
+                maxLengthWord = word;
+            }
+        })
+        return maxLengthWord;
+    }
+
+    let str = prompt("Nhập xâu ký tự cần chuẩn hóa");
+    let formattedString = formatString(str);
+    alert(formattedString);
+    alert("Từ dài nhất trong xâu là: " + getMaxLengthWordFromString(formattedString));
+</script>
+</body>
+</html>

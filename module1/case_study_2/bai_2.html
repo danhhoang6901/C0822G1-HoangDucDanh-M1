@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        let characters1 = prompt("Nhập ký tự nguyên âm vào mảng");
+        arr.push(characters1);
+    }
+    let characters = prompt("Nhập 1 ký tự để kiểm tra");
+        if(arr.includes(characters)){
+            alert("Nguyên âm");
+        }else {
+            alert("Phụ âm");
+        }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = "HellOCodeym              ";
+    demKyTuHoaVaThuong(str);
+
+    function demKyTuHoaVaThuong(string) {
+        let demChuHoa = 0;
+        let demChuThuong = 0;
+        let arr = [];
+        if (string === ' ') {
+            return arr;
+        }
+        for (let i = 0; i < string.length; i++) {
+            if (string[i] === string[i].toUpperCase() && string[i] !== ' ') {
+                demChuHoa++;
+            } else if (string[i] !== ' ') {
+                demChuThuong++;
+            }
+        }
+        arr.push(demChuHoa, demChuThuong);
+        alert("Số ký tự in hoa và in thường là " + arr);
+    }
+</script>
+</body>
+</html>

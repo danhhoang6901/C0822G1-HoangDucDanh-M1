@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function tongSoChan(row1, col1) {
+        let arr = new Array(row1);
+        let tong = 0;
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = new Array(col1);
+            for (let j = 0; j < arr[i].length; j++) {
+                arr[i][j] = +prompt("Nhập giá trị");
+                if (arr[i][j] % 2 === 0) {
+                    tong += arr[i][j];
+                }
+            }
+        }
+        alert(arr);
+        alert("Tổng số chẵn trong mảng là " + tong);
+    }
+
+    let row = +prompt("Nhập số hàng ");
+    let col = +prompt("Nhập số cột");
+    tongSoChan(row, col);
+</script>
+</body>
+</html>

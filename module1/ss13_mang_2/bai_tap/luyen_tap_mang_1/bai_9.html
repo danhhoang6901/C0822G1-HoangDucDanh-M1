@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let ketQua = [];
+    let ketQua2 = [];
+    for (let i = 0; i < 10; i++) {
+        let number = prompt("Nhập 1 số vào mảng a ");
+        ketQua.push(number);
+    }
+    console.log(ketQua);
+    for (let j = 0; j < 10; j++) {
+        let number2 = prompt("Nhập 1 số vào mảng b ");
+        ketQua2.push(number2);
+
+    }
+    console.log(ketQua2);
+    let ketQua3 = ketQua.concat(ketQua2);
+    document.write("Mảng c là: " + ketQua3);
+</script>
+</body>
+</html>

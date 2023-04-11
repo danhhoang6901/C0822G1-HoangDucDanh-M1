@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let score = +prompt("Nhập điểm bài kiểm tra");
+    let score2 = +prompt("Nhập điểm thi giữa kỳ");
+    let score3 = +prompt("Nhập điểm thi cuối kỳ");
+    let score4 = (score + score2 + score3) / 3;
+    if (score4 < 3.5) {
+        alert("Học sinh yếu");
+    } else if (score4<6.5) {
+        alert("Học sinh trung bình");
+    } else if (score4 < 8.0) {
+        alert("Học sinh khá");
+    } else {
+        alert("Học sinh giỏi");
+    }
+</script>
+</body>
+</html>

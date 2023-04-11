@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let tong = 0;
+    let ketQua = [];
+    for (let i = 0; i < 10; i++) {
+        let number = +prompt("Nhập 1 số");
+        if (number >= 10) {
+            tong++;
+            ketQua.push(number);
+        } else {
+            console.log("Số nhỏ hơn 10: " + number);
+        }
+    }
+    document.write("Số phần tử lớn hơn hoặc bằng 10 là " + tong + ": " + ketQua);
+</script>
+</body>
+</html>

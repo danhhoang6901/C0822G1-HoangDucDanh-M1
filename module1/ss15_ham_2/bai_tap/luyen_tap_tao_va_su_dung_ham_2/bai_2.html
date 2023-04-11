@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const PI = Math.PI;
+
+    function dienTich(number) {
+        return number * number * PI;
+    }
+
+    function chuVi(number2) {
+        return number2 * 2 * PI;
+    }
+
+    let num = +prompt("Nhập bán kính hình tròn");
+    let ketQua = dienTich(num);
+    let ketQua2 = chuVi(num);
+    alert("Diện tích hình tròn là: " + ketQua);
+    alert("Chu vi hình tròn là: " + ketQua2);
+</script>
+</body>
+</html>

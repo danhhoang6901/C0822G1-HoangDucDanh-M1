@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let doDai = prompt("Nhập độ dài mảng");
+    while (doDai > 50 || doDai < 0) {
+        alert("Nhập lại");
+
+        doDai = prompt("Nhập độ dài mảng");
+    }
+    let arr = [];
+    for (let i = 0; i < doDai; i++) {
+        let number = +prompt("Nhập phần tử cho vào mảng");
+        arr.push(number);
+    }
+    alert("Mảng vừa nhập là " + arr);
+
+    // function check(arr1) {
+    //     for (let i = 0; i < arr1.length; i++) {
+    //         if (arr1[i + 1] > arr1[i] && arr1[i + 1] > arr1[i + 2]||arr1[i + 1] < arr1[i] && arr1[i + 1] < arr1[i + 2]) {
+    //
+    //         }
+    //     }
+    // }
+    //
+    // alert(check(arr));
+
+
+</script>
+</body>
+</html>

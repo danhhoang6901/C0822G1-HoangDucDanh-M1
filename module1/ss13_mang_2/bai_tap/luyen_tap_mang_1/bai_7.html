@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let ketQua = [];
+    for (let i = 0; i < 10; i++) {
+        let number = +prompt("Nhập 1 số");
+        ketQua.push(number);
+    }
+    let V = +prompt("Nhập 1 số nguyên để kiểm tra");
+    if (ketQua.includes(V)) {
+        alert("V is in the array");
+        ketQua.splice(ketQua.indexOf(V),1);
+        ketQua.push(0);
+        console.log(ketQua);
+    } else {
+        alert("V is not in the array");
+    }
+</script>
+</body>
+</html>

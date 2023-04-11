@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="bienSo" placeholder="Nhập biển số">
+<input type="text" id="chuXe" placeholder="Nhập chủ sở hữu">
+<input type="text" id="hangXe" placeholder="Nhập hãng xe">
+<input type="number" id="giaXe" placeholder="Nhập giá xe">
+<button onclick="them()">Add</button>
+<p id="display"></p>
+<script>
+    class XeMay {
+        constructor(bienSo, chuXe, hangXe, giaXe) {
+            this.bienSo = bienSo;
+            this.chuXe = chuXe;
+            this.hangXe = hangXe;
+            this.giaXe = giaXe;
+        }
+
+        getGiaXe() {
+            return this.giaXe;
+        }
+
+        setGiaXe(giaXe) {
+            this.giaXe = giaXe;
+        }
+
+        getBienSo() {
+            return this.bienSo;
+        }
+
+        getchuXe() {
+            return this.chuXe;
+        }
+
+        getHangXe() {
+            return this.hangXe;
+        }
+
+        setBienSo(bienSo) {
+            this.bienSo = bienSo;
+        }
+
+        setchuXe(chuXe) {
+            this.chuXe = chuXe;
+        }
+
+        setHangXe(hangXe) {
+            this.hangXe = hangXe;
+        }
+    }
+
+    let xe = new XeMay("74-C19999", "Hoàng Đức Danh", "HonDa", 20000000);
+    let xe1 = new XeMay("74-C19998", "Phạm Thế Sơn", "HonDa", 15000000);
+    let xe2 = new XeMay("74-C19997", "Phạm Quang Vinh", "HonDa", 10000000);
+    let danhSachXe = [xe, xe1, xe2];
+    display(danhSachXe);
+
+    function display(danhSach) {
+        let tableString = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th width="50">STT</th>\n' +
+            '        <th width="100">Biển số</th>\n' +
+            '        <th width="150">Chủ sở hữu</th>\n' +
+            '        <th width="150">Hãng xe</th>\n' +
+            '        <th width="150">Giá xe</th>\n' +
+            '        <th colspan="2" width="100"></th>\n' +
+            '    </tr>';
+        for (let i = 0; i < danhSach.length; i++) {
+            tableString += ' <tr>\n' +
+                '        <td align="center">' + (i + 1) + '</td>\n' +
+                '        <td align="center">' + danhSach[i].getBienSo() + '</td>\n' +
+                '        <td align="center">' + danhSach[i].getchuXe() + '</td>\n' +
+                '        <td align="center">' + danhSach[i].getHangXe() + '</td>\n' +
+                '        <td align="center">' + danhSach[i].getGiaXe() + '</td>\n' +
+                '        <td>' + '<button onclick="edit(' + i + ')">Edit</button>' + '</td>\n' +
+                '        <td>' + '<button onclick="xoa(' + i + ')">Delete</button>' + '</td>\n' +
+                '    </tr>';
+        }
+        tableString += '</table>';
+        document.getElementById("display").innerHTML = tableString;
+    }
+
+    function them() {
+        let giaXe1 = document.getElementById("giaXe").value;
+        let bienSo1 = document.getElementById("bienSo").value;
+        let chuXe1 = document.getElementById("chuXe").value;
+        let hangXe1 = document.getElementById("hangXe").value;
+        let xe3 = new XeMay(bienSo1, chuXe1, hangXe1,giaXe1);
+        danhSachXe.push(xe3);
+        display(danhSachXe);
+        document.getElementById("bienSo").value = "";
+        document.getElementById("chuXe").value = "";
+        document.getElementById("hangXe").value = "";
+        document.getElementById("giaXe").value = "";
+    }
+
+    function xoa(index) {
+        danhSachXe.splice(index, 1);
+        display(danhSachXe);
+    }
+
+    function edit(index) {
+        let thongBao = prompt("Bạn có muốn thay đổi không?\n" + "Bấm số 1 nếu Có\n" + "Bấm hủy nếu Không");
+        if (thongBao == 1) {
+            let bienSo2 = prompt("Nhập biển số mới");
+            let chuXe2 = prompt("Nhập chủ sở hữu mới");
+            let hangXe2 = prompt("Nhập hãng xe mới");
+            let giaXe2 = prompt("Nhập giá xe mới");
+            danhSachXe[index].setGiaXe(giaXe2);
+            danhSachXe[index].setBienSo(bienSo2);
+            danhSachXe[index].setchuXe(chuXe2);
+            danhSachXe[index].setHangXe(hangXe2);
+        }
+
+
+        // if (bienSo2 == null) {
+        //     bienSo2 = danhSachXe[index].getBienSo();
+        // }
+        // if (chuXe2 == null) {
+        //     chuXe2 = danhSachXe[index].getchuXe();
+        // }
+        // if (hangXe2 == null) {
+        //     hangXe2 = danhSachXe[index].getHangXe();
+        // }
+
+        display(danhSachXe);
+    }
+</script>
+</body>
+</html>

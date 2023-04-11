@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkSoNguyenTo(number) {
+        for (let i = 2; i < number; i++) {
+            return number % i !== 0 && number % number === 0;
+        }
+    }
+
+    let arr = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+        [10, 11, 12],
+        [13, 14, 15],
+        [16, 17, 18],
+    ];
+    let soNguyenTo = [];
+    let dem = 0;
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            if (checkSoNguyenTo(arr[i][j])) {
+                soNguyenTo.push(arr[i][j]);
+                dem++;
+            }
+        }
+    }
+    alert("Có " + dem + " số nguyên tố trong mảng");
+    alert("Số nguyên tố trong mảng là " + soNguyenTo);
+</script>
+</body>
+</html>

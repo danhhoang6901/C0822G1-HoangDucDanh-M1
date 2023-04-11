@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let hinhTron = function (banKinh) {
+    //     this.banKinh = banKinh;
+    //     this.getBanKinh = function () {
+    //         return banKinh;
+    //     }
+    //     this.getDienTich = function () {
+    //         return Math.PI * banKinh * banKinh;
+    //     }
+    // };
+    // let hinhTron1 = new hinhTron(3);
+    // let banKinh = hinhTron1.getBanKinh;
+    // let dienTich = hinhTron1.getDienTich;
+    // alert("Bán kính bằng " + banKinh + " và diện tích hình tròn bằng " + dienTich);
+    let Circle = function (radius) {
+
+        this.radius = radius;
+
+        this.getRadius = function () {
+            return radius;
+        }
+        this.getArea = function () {
+            return Math.PI * radius * radius;
+        }
+
+    };
+    let circle = new Circle(2);
+    let radius = circle.getRadius(); // 2
+
+    let area = circle.getArea(); // 12.566370614359172
+    alert("radius: " + radius + "; area: " + area);
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let money = +prompt("Số tiền gửi");
+    let month = +prompt("Số tháng gửi");
+    let lai = money;
+    let lai1 = 0.06;
+    for (let i = 1; i <= month; i++) {
+        money = money + money * lai1;
+    }
+    lai = money - lai;
+    document.write(lai);
+</script>
+</body>
+</html>

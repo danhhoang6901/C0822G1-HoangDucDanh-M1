@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>ỨNG DỤNG QUẢN LÝ XE MÁY TRONG BÃI ĐỖ XE CỦA TRUNG TÂM CODEGYM</h2>
+<input type="text" id="bienSo" placeholder="Nhập biển số xe">
+<input type="text" id="hoTen" placeholder="Nhập họ tên sinh viên">
+<input type="number" id="chungMinhNhanDan" placeholder="Nhập chứng minh nhân dân">
+<input type="text" id="hangXe" placeholder="Nhập hãng xe máy">
+<input type="number" id="phiXe" placeholder="Nhập phí gủi xe đã đóng">
+<button onclick="them()">Thêm mới</button>
+<p id="display"></p>
+<script>
+    class Xe {
+        constructor(bienSoXe, hoTenSinhVien, chungMinhNhanDan, hangXeMay, phiGuiXeDaDong) {
+            this.bienSoXe = bienSoXe;
+            this.hoTenSinhVien = hoTenSinhVien;
+            this.chungMinhNhanDan = chungMinhNhanDan;
+            this.hangXeMay = hangXeMay;
+            this.phiGuiXeDaDong = phiGuiXeDaDong;
+        }
+
+        getBienSoXe() {
+            return this.bienSoXe;
+        }
+
+        getHoTenSinhVien() {
+            return this.hoTenSinhVien;
+        }
+
+        getChungMinhNhanDan() {
+            return this.chungMinhNhanDan;
+        }
+
+        getHangXeMay() {
+            return this.hangXeMay;
+        }
+
+        getPhiGuiXeDaDong() {
+            return this.phiGuiXeDaDong;
+        }
+
+        setBienSoXe(bienSoXe) {
+            this.bienSoXe = bienSoXe;
+        }
+
+        setHoTenSinhVien(hoTenSinhVien) {
+            this.hoTenSinhVien = hoTenSinhVien;
+        }
+
+        setChungMinhNhanDan(chungMinhNhanDan) {
+            this.chungMinhNhanDan = chungMinhNhanDan;
+        }
+
+        setHangXeMay(hangXeMay) {
+            this.hangXeMay = hangXeMay;
+        }
+
+        setPhiGuiXeDaDong(phiGuiXeDaDong) {
+            this.phiGuiXeDaDong = phiGuiXeDaDong;
+        }
+    }
+
+    let xe = new Xe("74-C1-9999", "Hoàng Đức Danh", 1980023545, "Honda", 70000);
+    let xe1 = new Xe("74-C1-9998", "Phạm Thế Sơn", 1980023555, "Yamaha", 70000);
+    let xe2 = new Xe("74-C1-9997", "Hoàng Đức Danh", 1980023565, "Sym", 70000);
+    let danhSachXe = [xe, xe1, xe2];
+    display(danhSachXe)
+
+    function display(danhSach) {
+        let tableString = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>Biển số xe</th>\n' +
+            '        <th>Họ tên sinh viên</th>\n' +
+            '        <th>Chứng minh nhân dân</th>\n' +
+            '        <th> Hãng xe máy</th>\n' +
+            '        <th>Phí gửi xe đã đóng</th>\n' +
+            '        <th colspan="2"></th>\n' +
+            '    </tr>';
+        for (let i = 0; i < danhSach.length; i++) {
+            tableString += '<tr>\n' +
+                '        <td align="center">' + (i + 1) + '</td>\n' +
+                '        <td align="center">' + danhSach[i].getBienSoXe() + '</td>\n' +
+                '        <td align="center">' + danhSach[i].getHoTenSinhVien() + '</td>\n' +
+                '        <td align="center">' + danhSach[i].getChungMinhNhanDan() + '</td>\n' +
+                '        <td align="center">' + danhSach[i].getHangXeMay() + '</td>\n' +
+                '        <td align="center">' + danhSach[i].getPhiGuiXeDaDong() + '</td>\n' +
+                '        <td>' + '<button onclick="edit(' + i + ')">Edit</button>' + '</td>\n' +
+                '        <td>' + '<button onclick="xoa(' + i + ')">Delete</button>' + '</td>\n' +
+                '    </tr>';
+        }
+        tableString += '</table>';
+        document.getElementById("display").innerHTML = tableString;
+    }
+
+    function them() {
+        let bienSoXe1 = document.getElementById("bienSo").value;
+        let hoTenSinhVien1 = document.getElementById("hoTen").value;
+        let chungMinhNhanDan1 = document.getElementById("chungMinhNhanDan").value;
+        let hangXeMay1 = document.getElementById("hangXe").value;
+        let phiGuiXe1 = document.getElementById("phiXe").value;
+        let xe3 = new Xe(bienSoXe1, hoTenSinhVien1, chungMinhNhanDan1, hangXeMay1, phiGuiXe1);
+        danhSachXe.push(xe3);
+        display(danhSachXe);
+        document.getElementById("bienSo").value = "";
+        document.getElementById("hoTen").value = "";
+        document.getElementById("chungMinhNhanDan").value = "";
+        document.getElementById("hangXe").value = "";
+        document.getElementById("phiXe").value = "";
+        alert("Đã thêm xe vào danh sách thành công");
+    }
+
+    function xoa(index) {
+        let xacNhan = confirm("Bạn có chắc muốn xóa xe này không?");
+        if (xacNhan == true) {
+            danhSachXe.splice(index, 1);
+        }
+        display(danhSachXe);
+    }
+
+    function edit(index) {
+        let thongBao = confirm("Bạn có muốn thay đổi không?\n" + "Nhấn Ok nếu Có\n" + "Nhấn Cancel để Hủy");
+        if (thongBao == true) {
+            let bienSoXe2 = prompt("Nhập biển số xe mới");
+            let hoTenSinhVien2 = prompt("Nhập họ tên sinh viên mới");
+            let chungMinhNhanDan2 = prompt("Nhập số chứng minh nhân dân mới");
+            let hangXeMay2 = prompt("Nhập hãng xe máy mới");
+            let phiGuiXe2 = prompt("Nhập phi gửi xe mới");
+            danhSachXe[index].setBienSoXe(bienSoXe2);
+            danhSachXe[index].setHoTenSinhVien(hoTenSinhVien2);
+            danhSachXe[index].setChungMinhNhanDan(chungMinhNhanDan2);
+            danhSachXe[index].setHangXeMay(hangXeMay2);
+            danhSachXe[index].setPhiGuiXeDaDong(phiGuiXe2);
+        }
+        display(danhSachXe);
+    }
+</script>
+</body>
+</html>

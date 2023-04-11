@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr1 = "   object   Oriened    programming   ";
+    vietTat(arr1);
+
+    function vietTat(string) {
+        let arr = string.split(" ");
+        let ketQua = "";
+        if (arr.length <= 1) {
+            alert("Chuỗi chỉ có 1 từ nên không cần viết tắt");
+        } else {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] !== '') {
+                    ketQua += arr[i][0].toUpperCase();
+                }
+            }
+            alert(ketQua);
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt("Nhập 1 chuỗi");
+    let chuHoa = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let chuThuong = 'abcdefghijklmnopqrstuvwxyz';
+    let ketQua = [];
+    for (let i = 0; i < str.length; i++) {
+        if (chuHoa.indexOf(str[i]) !== -1) {
+            ketQua.push(str[i].toLowerCase());
+        } else if (chuThuong.indexOf(str[i]) !== -1) {
+            ketQua.push(str[i].toUpperCase());
+        } else {
+            ketQua.push(str[i]);
+        }
+    }
+    document.write(ketQua.toString());
+</script>
+</body>
+</html>

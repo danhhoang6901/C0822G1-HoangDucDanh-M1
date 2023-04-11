@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" name="play" style="margin-bottom: 20px" onclick="play()">Chơi</button>
+<br>
+<button type="reset" name="reset" onclick="again()">Chơi lại</button>
+<script>
+    function play() {
+        let number = +prompt("Bạn đoán trong khoảng bao nhiêu? ");
+        let number1 = Math.floor(Math.random() * number);
+        console.log(number1);
+        let number2 = +prompt("Nhập số bạn đoán");
+        //let number3 = 0;
+        for (let i = 0; i < 3; i++) {
+            if (number2 > number1) {
+                alert("Số bạn đoạn lớn hơn");
+            } else if (number2 < number1) {
+                alert("Số bạn đoán nhỏ hơn");
+            } else {
+                alert("Bạn đoán đúng");
+                break;
+            }
+            number2 = +prompt("Nhập số bạn đoán");
+        }
+        alert("Kết thúc trò chơi");
+    }
+</script>
+</body>
+</html>

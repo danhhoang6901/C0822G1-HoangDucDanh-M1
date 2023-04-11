@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [5, 2, 5];
+    let arr2 = [6, 3, 4];
+    let viTri = 0;
+    let max = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] / arr2[i] > max) {
+            max = arr[i] / arr2[i];
+            viTri = i;
+        }
+    }
+    alert(arr[viTri] + "/" + arr2[viTri] + " là phân só lớn nhất, có chỉ số là " + viTri);
+</script>
+</body>
+</html>

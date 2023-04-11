@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc if-else-if</title>
+</head>
+<body>
+    <script>
+        let dangNhap=prompt("Nhập tên đăng nhập");
+        if (dangNhap == "Admin") {
+            let matKhau=prompt("Nhập mật khẩu");
+            if (matKhau == "TheMaster") {
+                alert("Welcome");
+            } else if (matKhau==null) {
+                alert("Canceled");
+            } else {
+                alert("Wrong password");
+            }
+        } else if (dangNhap == null) {
+            alert("Canceled");
+        } else {
+            alert("I don't know you");
+        }
+    </script>
+</body>
+</html>

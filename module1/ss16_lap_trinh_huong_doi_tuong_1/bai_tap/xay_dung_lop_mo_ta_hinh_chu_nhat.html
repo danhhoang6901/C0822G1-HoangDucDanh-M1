@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" height="500" width="1000"></canvas>
+<script>
+    class Rectangle {
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+        setWidth(value) {
+            this.width = value;
+        }
+        setHeight(value) {
+            this.height = value;
+        }
+        getArea() {
+            return this.width * this.height;
+        }
+        getPerimeter() {
+            return (this.width + this.height) * 2;
+        }
+    }
+    let rectangle = new Rectangle(300, 400);
+    // rectangle.setHeight(200);
+    // rectangle.setWidth(300);
+    alert("Diện tích hình chữ nhật bằng " + rectangle.getArea() + " và chu vi hình chữ nhật bằng " + rectangle.getPerimeter());
+    let danh = document.getElementById("myCanvas");
+    let ctx = danh.getContext('2d');
+    ctx.fillStyle = 'red';
+    ctx.fillRect(10, 40, 300, 400);
+</script>
+</body>
+</html>

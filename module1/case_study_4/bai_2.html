@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    function demSoLuongKyTuKhacNhau(str) {
+        let dem = 1;
+        let tam = [str[0]];
+        for (let i = 0; i < str.length; i++) {
+            if (tam.includes(str[i])) {
+                continue;
+            }
+            dem++;
+            tam.push(str[i]);
+        }
+        console.log(tam);
+        return dem;
+    }
+
+    let s = "cabca";
+    let ketQua = demSoLuongKyTuKhacNhau(s);
+    alert("Trong xâu có " + ketQua + " ký tự khác nhau");
+</script>
+</body>
+</html>

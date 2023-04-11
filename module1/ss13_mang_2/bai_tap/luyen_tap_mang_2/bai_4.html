@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let chuoi=prompt("Nhập 1 chuỗi");
+    let splitted=chuoi.split(" ");
+    let dem=0;
+    for (let i=0;i<splitted.length;i++) {
+        if (splitted[i] !== "") {
+            dem++;
+        }
+    }
+        console.log(chuoi);
+        document.write("Số từ trong chuỗi là "+dem);
+</script>
+</body>
+</html>
